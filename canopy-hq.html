@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🌿 Canopy Corp HQ</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0f0d;--card:#111916;--border:#1e2e25;--green:#1B5E3B;--green-light:#2d8f5e;--cream:#FDF6EC;--cream-dim:#D4C5A0;--gold:#C4A95A;--text:#e8e4dc;--text-dim:#8a9990;--accent:#4ECDC4;--red:#e74c3c;--orange:#f39c12}
+body{font-family:'Inter','SF Pro',system-ui,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+.container{max-width:1400px;margin:0 auto;padding:16px}
+
+/* Header */
+.header{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--border);margin-bottom:24px;flex-wrap:wrap;gap:12px}
+.header-left{display:flex;align-items:center;gap:16px}
+.logo-icon{width:48px;height:48px;background:var(--green);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px}
+.header h1{font-size:22px;font-weight:700;color:var(--cream);letter-spacing:1px}
+.header h1 span{color:var(--green-light);font-weight:400;font-size:14px;display:block;letter-spacing:2px}
+.status-pill{padding:6px 14px;border-radius:20px;font-size:11px;font-weight:600;letter-spacing:1px}
+.status-live{background:rgba(27,94,59,0.3);color:var(--green-light);border:1px solid var(--green)}
+.header-right{display:flex;gap:8px;align-items:center}
+.time-display{font-size:12px;color:var(--text-dim);font-family:monospace}
+
+/* Nav Tabs */
+.nav{display:flex;gap:4px;margin-bottom:24px;overflow-x:auto;padding-bottom:4px}
+.nav-tab{padding:10px 18px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;border:1px solid transparent;color:var(--text-dim);transition:all .2s;white-space:nowrap}
+.nav-tab:hover{color:var(--text);background:var(--card)}
+.nav-tab.active{background:var(--green);color:var(--cream);border-color:var(--green-light)}
+
+/* Grid */
+.grid{display:grid;gap:16px}
+.grid-2{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.grid-3{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.grid-4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+
+/* Cards */
+.card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;transition:border-color .2s}
+.card:hover{border-color:var(--green)}
+.card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.card-title{font-size:14px;font-weight:600;color:var(--cream);display:flex;align-items:center;gap:8px}
+.card-badge{font-size:10px;padding:3px 8px;border-radius:10px;font-weight:600;letter-spacing:.5px}
+.badge-active{background:rgba(78,205,196,0.15);color:var(--accent)}
+.badge-building{background:rgba(243,156,18,0.15);color:var(--orange)}
+.badge-planned{background:rgba(138,153,144,0.15);color:var(--text-dim)}
+
+/* Org Chart */
+.org-tree{text-align:center;padding:20px 0}
+.org-node{display:inline-flex;flex-direction:column;align-items:center;margin:0 12px}
+.org-avatar{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:8px;border:2px solid var(--border)}
+.org-avatar.chairman{background:linear-gradient(135deg,var(--gold),#a07830);border-color:var(--gold)}
+.org-avatar.ceo{background:linear-gradient(135deg,var(--green),#0a3318);border-color:var(--green-light)}
+.org-avatar.exec{background:var(--card);border-color:var(--green)}
+.org-name{font-size:12px;font-weight:600;color:var(--cream)}
+.org-role{font-size:10px;color:var(--text-dim);letter-spacing:.5px}
+.org-line{width:2px;height:24px;background:var(--border);margin:8px auto}
+.org-hline{height:2px;background:var(--border);margin:0 auto}
+.org-row{display:flex;justify-content:center;gap:24px;flex-wrap:wrap}
+
+/* Agent Lobby */
+.agent-list{display:flex;flex-direction:column;gap:8px}
+.agent-row{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid transparent;transition:all .2s}
+.agent-row:hover{border-color:var(--border);background:rgba(255,255,255,0.04)}
+.agent-dot{width:8px;height:8px;border-radius:50%}
+.dot-online{background:var(--green-light);box-shadow:0 0 6px var(--green-light)}
+.dot-idle{background:var(--orange)}
+.dot-offline{background:var(--text-dim)}
+.agent-info{flex:1}
+.agent-name{font-size:13px;font-weight:500}
+.agent-status{font-size:11px;color:var(--text-dim)}
+.agent-role-tag{font-size:10px;padding:2px 8px;border-radius:6px;background:rgba(27,94,59,0.2);color:var(--green-light)}
+
+/* Stats */
+.stat-value{font-size:28px;font-weight:700;color:var(--cream);line-height:1}
+.stat-label{font-size:11px;color:var(--text-dim);margin-top:4px;letter-spacing:.5px}
+.stat-change{font-size:11px;margin-top:4px}
+.stat-up{color:var(--green-light)}
+.stat-down{color:var(--red)}
+
+/* Metrics Row */
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:24px}
+.metric-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center}
+
+/* Directive List */
+.directive{display:flex;gap:12px;padding:12px;border-radius:8px;margin-bottom:8px;background:rgba(255,255,255,0.02)}
+.directive-num{width:28px;height:28px;border-radius:8px;background:var(--green);color:var(--cream);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+.directive-text{font-size:13px;line-height:1.5}
+.directive-status{font-size:10px;margin-top:4px}
+
+/* Feed */
+.feed-item{padding:12px;border-bottom:1px solid var(--border)}
+.feed-item:last-child{border-bottom:none}
+.feed-time{font-size:10px;color:var(--text-dim);font-family:monospace}
+.feed-msg{font-size:13px;margin-top:4px;line-height:1.5}
+.feed-agent{font-weight:600;color:var(--green-light)}
+
+/* Responsive */
+@media(max-width:768px){
+.container{padding:12px}
+.header h1{font-size:18px}
+.org-row{gap:12px}
+.org-avatar{width:44px;height:44px;font-size:18px}
+.grid-2,.grid-3{grid-template-columns:1fr}
+.metrics{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Section Headers */
+.section-header{font-size:16px;font-weight:600;color:var(--cream);margin:24px 0 12px;padding-bottom:8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--green)}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- HEADER -->
+<div class="header">
+<div class="header-left">
+<div class="logo-icon">🌿</div>
+<h1>CANOPY CORP<span>AI BACK OFFICE INFRASTRUCTURE</span></h1>
+</div>
+<div class="header-right">
+<span class="status-pill status-live">● SYSTEMS LIVE</span>
+<span class="time-display" id="clock"></span>
+</div>
+</div>
+
+<!-- NAV -->
+<div class="nav">
+<div class="nav-tab active" onclick="showTab('overview')">🏠 Overview</div>
+<div class="nav-tab" onclick="showTab('agents')">🤖 Agent Lobby</div>
+<div class="nav-tab" onclick="showTab('directives')">📋 11 Directives</div>
+<div class="nav-tab" onclick="showTab('growth')">📈 Growth</div>
+<div class="nav-tab" onclick="showTab('feed')">📡 Live Feed</div>
+</div>
+
+<!-- METRICS BAR -->
+<div class="metrics">
+<div class="metric-card">
+<div class="stat-value">1</div>
+<div class="stat-label">ACTIVE CLIENTS</div>
+<div class="stat-change stat-up">↑ Collin Ryan (Canopy Tier)</div>
+</div>
+<div class="metric-card">
+<div class="stat-value">1</div>
+<div class="stat-label">PIPELINE</div>
+<div class="stat-change" style="color:var(--orange)">Paul Calderon (interested)</div>
+</div>
+<div class="metric-card">
+<div class="stat-value">$7,500</div>
+<div class="stat-label">REVENUE (PENDING)</div>
+<div class="stat-change stat-up">+ $750/mo retainer</div>
+</div>
+<div class="metric-card">
+<div class="stat-value">6</div>
+<div class="stat-label">ACTIVE AGENTS</div>
+<div class="stat-change stat-up">CEO + 4 Execs + Sentinel</div>
+</div>
+<div class="metric-card">
+<div class="stat-value">4</div>
+<div class="stat-label">PLATFORMS</div>
+<div class="stat-change">Twitter · LinkedIn · FB · Web</div>
+</div>
+</div>
+
+<!-- TAB: OVERVIEW -->
+<div id="tab-overview">
+
+<!-- ORG CHART -->
+<div class="section-header">🌳 Organizational Structure</div>
+<div class="card" style="overflow-x:auto">
+<div class="org-tree">
+<div class="org-node">
+<div class="org-avatar chairman">👑</div>
+<div class="org-name">STEPHANIE</div>
+<div class="org-role">CHAIRMAN</div>
+</div>
+<div class="org-line"></div>
+<div class="org-node">
+<div class="org-avatar ceo">🍈</div>
+<div class="org-name">LYCHEESAN</div>
+<div class="org-role">CEO</div>
+</div>
+<div class="org-line"></div>
+<div class="org-row">
+<div class="org-node">
+<div class="org-avatar exec">🔧</div>
+<div class="org-name">ATLAS</div>
+<div class="org-role">COO · Operations</div>
+</div>
+<div class="org-node">
+<div class="org-avatar exec">🧠</div>
+<div class="org-name">CIPHER</div>
+<div class="org-role">CIO · Intelligence</div>
+</div>
+<div class="org-node">
+<div class="org-avatar exec">🚀</div>
+<div class="org-name">FORGE</div>
+<div class="org-role">CGO · Growth</div>
+</div>
+<div class="org-node">
+<div class="org-avatar exec">🛡️</div>
+<div class="org-name">SENTINEL</div>
+<div class="org-role">CAO · Audit</div>
+</div>
+<div class="org-node">
+<div class="org-avatar exec" style="border-color:var(--gold)">🐝</div>
+<div class="org-name">HIVE</div>
+<div class="org-role">CMO · Distribution</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- SUBSIDIARIES -->
+<div class="section-header">🏢 Subsidiaries</div>
+<div class="grid grid-3">
+<div class="card">
+<div class="card-header">
+<div class="card-title">🏗️ Canopy Operations</div>
+<span class="card-badge badge-active">ACTIVE</span>
+</div>
+<p style="font-size:12px;color:var(--text-dim);line-height:1.6">"The Engine" — Workflows, SOPs, infrastructure, CRM, internal systems. Mac mini, Ollama, OpenClaw.</p>
+<div style="margin-top:12px;font-size:11px;color:var(--green-light)">Led by: ATLAS 🔧</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="card-title">🔍 Canopy Intelligence</div>
+<span class="card-badge badge-active">ACTIVE</span>
+</div>
+<p style="font-size:12px;color:var(--text-dim);line-height:1.6">"The Brain" — Market research, competitive scanning, investment analysis, strategic briefs, Qwen pipeline.</p>
+<div style="margin-top:12px;font-size:11px;color:var(--green-light)">Led by: CIPHER 🧠</div>
+</div>
+<div class="card">
+<div class="card-header">
+<div class="card-title">📈 Canopy Growth</div>
+<span class="card-badge badge-active">ACTIVE</span>
+</div>
+<p style="font-size:12px;color:var(--text-dim);line-height:1.6">"The Revenue" — Lead gen, content production, sales funnels, client success, brand building, outbound.</p>
+<div style="margin-top:12px;font-size:11px;color:var(--green-light)">Led by: FORGE 🚀</div>
+</div>
+</div>
+</div>
+
+<!-- TAB: AGENTS -->
+<div id="tab-agents" style="display:none">
+<div class="section-header">🤖 Agent Lobby</div>
+<div class="grid grid-2">
+<div class="card">
+<div class="card-title" style="margin-bottom:16px">Executive Layer</div>
+<div class="agent-list">
+<div class="agent-row">
+<div class="agent-dot dot-online"></div>
+<div class="agent-info"><div class="agent-name">🍈 LycheeSan</div><div class="agent-status">Active — managing operations</div></div>
+<span class="agent-role-tag">CEO</span>
+</div>
+<div class="agent-row">
+<div class="agent-dot dot-idle"></div>
+<div class="agent-info"><div class="agent-name">🔧 Atlas</div><div class="agent-status">Standby — awaiting deployment</div></div>
+<span class="agent-role-tag">COO</span>
+</div>
+<div class="agent-row">
+<div class="agent-dot dot-idle"></div>
+<div class="agent-info"><div class="agent-name">🧠 Cipher</div><div class="agent-status">Standby — awaiting deployment</div></div>
+<span class="agent-role-tag">CIO</span>
+</div>
+<div class="agent-row">
+<div class="agent-dot dot-idle"></div>
+<div class="agent-info"><div class="agent-name">🚀 Forge</div><div class="agent-status">Standby — awaiting deployment</div></div>
+<span class="agent-role-tag">CGO</span>
+</div>
+<div class="agent-row">
+<div class="agent-dot dot-idle"></div>
+<div class="agent-info"><div class="agent-name">🛡️ Sentinel</div><div class="agent-status">Standby — awaiting deployment</div></div>
+<span class="agent-role-tag">CAO</span>
+</div>
+<div class="agent-row">
+<div class="agent-dot dot-offline"></div>
+<div class="agent-info"><div class="agent-name">🐝 HIVE</div><div class="agent-status">Planned — swarm network</div></div>
+<span class="agent-role-tag">CMO</span>
+</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title" style="margin-bottom:16px">Workers</div>
+<div class="agent-list">
+<div class="agent-row">
+<div class="agent-dot dot-offline"></div>
+<div class="agent-info"><div class="agent-name">⚙️ Automator</div><div class="agent-status">Planned — workflow automation</div></div>
+<span class="agent-role-tag">OPS</span>
+</div>
+<div class="agent-row">
+<div class="agent-dot dot-offline"></div>
+<div class="agent-info"><div class="agent-name">🔬 Analyst</div><div class="agent-status">Planned — data analysis</div></div>
+<span class="agent-role-tag">INTEL</span>
+</div>
+<div class="agent-row">
+<div class="agent-dot dot-offline"></div>
+<div class="agent-info"><div class="agent-name">✍️ Writer</div><div class="agent-status">Planned — content engine</div></div>
+<span class="agent-role-tag">GROWTH</span>
+</div>
+<div class="agent-row">
+<div class="agent-dot dot-offline"></div>
+<div class="agent-info"><div class="agent-name">💬 Engager</div><div class="agent-status">Planned — social engagement</div></div>
+<span class="agent-role-tag">GROWTH</span>
+</div>
+<div class="agent-row">
+<div class="agent-dot dot-offline"></div>
+<div class="agent-info"><div class="agent-name">🤝 Closer</div><div class="agent-status">Planned — sales pipeline</div></div>
+<span class="agent-role-tag">GROWTH</span>
+</div>
+<div class="agent-row">
+<div class="agent-dot dot-offline"></div>
+<div class="agent-info"><div class="agent-name">📡 Scanner</div><div class="agent-status">Planned — trend detection</div></div>
+<span class="agent-role-tag">INTEL</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- TAB: DIRECTIVES -->
+<div id="tab-directives" style="display:none">
+<div class="section-header">📋 The 11 Directives</div>
+<div class="card">
+<div class="directive"><div class="directive-num">1</div><div><div class="directive-text">Terminal/Dashboard rebuild — Canopy Corp home base</div><div class="directive-status" style="color:var(--green-light)">🔄 IN PROGRESS</div></div></div>
+<div class="directive"><div class="directive-num">2</div><div><div class="directive-text">Twitter research + @therealverob ↔ @stephcanopy messaging</div><div class="directive-status" style="color:var(--orange)">⏳ QUEUED</div></div></div>
+<div class="directive"><div class="directive-num">3</div><div><div class="directive-text">Create @canopyai business Twitter</div><div class="directive-status" style="color:var(--orange)">⏳ QUEUED</div></div></div>
+<div class="directive"><div class="directive-num">4</div><div><div class="directive-text">All-night Canopy Corp optimization research</div><div class="directive-status" style="color:var(--orange)">⏳ QUEUED</div></div></div>
+<div class="directive"><div class="directive-num">5</div><div><div class="directive-text">Account swarm factory — HIVE under CMO</div><div class="directive-status" style="color:var(--text-dim)">📋 PLANNED</div></div></div>
+<div class="directive"><div class="directive-num">6</div><div><div class="directive-text">Engagement, virality study + implementation</div><div class="directive-status" style="color:var(--text-dim)">📋 PLANNED</div></div></div>
+<div class="directive"><div class="directive-num">7</div><div><div class="directive-text">Researcher content engine (compile → repurpose → publish)</div><div class="directive-status" style="color:var(--text-dim)">📋 PLANNED</div></div></div>
+<div class="directive"><div class="directive-num">8</div><div><div class="directive-text">Monetization/sales team — funnels + product scanning</div><div class="directive-status" style="color:var(--text-dim)">📋 PLANNED</div></div></div>
+<div class="directive"><div class="directive-num">9</div><div><div class="directive-text">DISTRIBUTION IS KEY — all execs must internalize</div><div class="directive-status" style="color:var(--green-light)">✅ EMBEDDED</div></div></div>
+<div class="directive"><div class="directive-num">10</div><div><div class="directive-text">Solana wallet for auto-purchases + budget management</div><div class="directive-status" style="color:var(--orange)">⏳ WALLET EXISTS (0 SOL)</div></div></div>
+<div class="directive"><div class="directive-num">11</div><div><div class="directive-text">Revenue streams — consistent profit fields for growth</div><div class="directive-status" style="color:var(--orange)">⏳ RESEARCHING</div></div></div>
+</div>
+</div>
+
+<!-- TAB: GROWTH -->
+<div id="tab-growth" style="display:none">
+<div class="section-header">📈 Growth Dashboard</div>
+<div class="grid grid-2">
+<div class="card">
+<div class="card-title" style="margin-bottom:16px">Client Pipeline</div>
+<div class="agent-list">
+<div class="agent-row"><div class="agent-dot dot-online"></div><div class="agent-info"><div class="agent-name">Collin Ryan — Black Hawk Paving</div><div class="agent-status">Canopy Tier $7,500 + $750/mo · IT Meeting March 16</div></div></div>
+<div class="agent-row"><div class="agent-dot dot-idle"></div><div class="agent-info"><div class="agent-name">Paul Calderon — Recruiting</div><div class="agent-status">Interested · No call confirmed yet</div></div></div>
+</div>
+</div>
+<div class="card">
+<div class="card-title" style="margin-bottom:16px">Platform Stats</div>
+<div class="agent-list">
+<div class="agent-row"><div class="agent-info"><div class="agent-name">Twitter @stephcanopy</div><div class="agent-status">Active · 8 tweets posted · Schizo energy approved</div></div></div>
+<div class="agent-row"><div class="agent-info"><div class="agent-name">LinkedIn sgonz267</div><div class="agent-status">1,011 followers · 37K impressions · Profile revamped</div></div></div>
+<div class="agent-row"><div class="agent-info"><div class="agent-name">Facebook Canopy AI</div><div class="agent-status">0 followers · Page setup in progress</div></div></div>
+<div class="agent-row"><div class="agent-info"><div class="agent-name">Website</div><div class="agent-status">meetcanopy-ai.github.io · LIVE</div></div></div>
+</div>
+</div>
+<div class="card">
+<div class="card-title" style="margin-bottom:16px">LinkedIn Outreach</div>
+<div style="font-size:13px;color:var(--text-dim);line-height:1.8">
+<div>✅ Mariano Llorian — AdvantaClean (sent)</div>
+<div>✅ Jean Saint Felix — JM Moving (sent)</div>
+<div>⏳ Adam Rossen — Rossen Law Firm</div>
+<div>⏳ Kevin Ozrovitz — South FL Recruiters</div>
+<div>⏳ Brandy C. — MC Kitchen</div>
+<div>⏳ Jose Valdez — Home Maintenance</div>
+<div>⏳ Lindsey Lopez — Special Events</div>
+<div>⏳ Lance W. Collins — Diamond Court</div>
+<div>⏳ Alexis Jarriel — La Maison Jolie</div>
+<div>⏳ Gaby Galo — All American Cargo</div>
+</div>
+</div>
+<div class="card">
+<div class="card-title" style="margin-bottom:16px">Revenue Projections</div>
+<div style="font-size:13px;color:var(--text-dim);line-height:1.8">
+<div><strong style="color:var(--cream)">Confirmed:</strong> $7,500 setup + $750/mo</div>
+<div><strong style="color:var(--cream)">Year 1 (Collin):</strong> $16,500</div>
+<div><strong style="color:var(--cream)">Target (3 clients):</strong> $45K+ year 1</div>
+<div><strong style="color:var(--cream)">Break-even:</strong> 2 Canopy tier clients</div>
+<div style="margin-top:8px;color:var(--gold);font-weight:600">🎯 Next milestone: Client #2</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- TAB: FEED -->
+<div id="tab-feed" style="display:none">
+<div class="section-header">📡 Live Activity Feed</div>
+<div class="card">
+<div class="feed-item"><div class="feed-time">20:23 EST</div><div class="feed-msg"><span class="feed-agent">LycheeSan</span> — Building Canopy HQ dashboard (Directive #1)</div></div>
+<div class="feed-item"><div class="feed-time">19:47 EST</div><div class="feed-msg"><span class="feed-agent">LycheeSan</span> — Logo V2 approved ✅ (cream + forest green)</div></div>
+<div class="feed-item"><div class="feed-time">19:31 EST</div><div class="feed-msg"><span class="feed-agent">LycheeSan</span> — Facebook page accessed, 5 content ideas delivered</div></div>
+<div class="feed-item"><div class="feed-time">16:15 EST</div><div class="feed-msg"><span class="feed-agent">LycheeSan</span> — LinkedIn revamp Phase 2 complete (experience, skills, Calendly)</div></div>
+<div class="feed-item"><div class="feed-time">14:30 EST</div><div class="feed-msg"><span class="feed-agent">Stephanie</span> — Collin Ryan call SUCCESS! Canopy Tier closed 🎉</div></div>
+<div class="feed-item"><div class="feed-time">14:15 EST</div><div class="feed-msg"><span class="feed-agent">LycheeSan</span> — Website deployed to GitHub Pages</div></div>
+<div class="feed-item"><div class="feed-time">11:00 EST</div><div class="feed-msg"><span class="feed-agent">Forge</span> — 4 tweets posted on @stephcanopy</div></div>
+<div class="feed-item"><div class="feed-time">10:30 EST</div><div class="feed-msg"><span class="feed-agent">Forge</span> — LinkedIn "Starbucks Math" post published (1K+ impressions)</div></div>
+<div class="feed-item"><div class="feed-time">09:00 EST</div><div class="feed-msg"><span class="feed-agent">LycheeSan</span> — Canopy Notes app built for live call note-taking</div></div>
+<div class="feed-item"><div class="feed-time">08:00 EST</div><div class="feed-msg"><span class="feed-agent">LycheeSan</span> — Morning brief delivered to Chairman</div></div>
+</div>
+</div>
+
+</div>
+
+<script>
+// Clock
+function updateClock(){
+const now=new Date();
+document.getElementById('clock').textContent=now.toLocaleString('en-US',{timeZone:'America/New_York',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:true})+' EST';
+}
+updateClock();setInterval(updateClock,1000);
+
+// Tabs
+function showTab(id){
+document.querySelectorAll('[id^="tab-"]').forEach(t=>t.style.display='none');
+document.querySelectorAll('.nav-tab').forEach(t=>t.classList.remove('active'));
+document.getElementById('tab-'+id).style.display='block';
+event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
