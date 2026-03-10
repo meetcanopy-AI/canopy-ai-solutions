@@ -3,295 +3,306 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Canopy AI Solutions — AI Automation for Small Business | Miami FL</title>
-<meta name="description" content="Canopy AI Solutions automates your business operations — email, scheduling, proposals, and more. One-time setup, no subscriptions. Serving Miami, Fort Lauderdale, and South Florida small businesses.">
-<meta name="keywords" content="AI consulting, workflow automation, small business AI, Miami AI consultant, business automation, AI for small business, Canopy AI">
-<meta property="og:title" content="Canopy AI Solutions — Your Business, But Smarter">
-<meta property="og:description" content="AI-powered workflow automation for small businesses. Save 15+ hours/week. One-time setup, no monthly fees. Book a free audit.">
+<title>Canopy AI — AI Automation for Small Business</title>
+<meta name="description" content="We build custom AI systems that save small businesses 15-30 hours per week. Workflow automation, AI chatbots, and operational intelligence. Miami, FL.">
+<meta property="og:title" content="Canopy AI — Your Business, But Smarter">
+<meta property="og:description" content="Custom AI automation for small businesses. Save 15-30 hours/week. Book a free discovery call.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://meetcanopy-ai.github.io/canopy-ai-solutions/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@stephcanopy">
-<meta name="twitter:title" content="Canopy AI Solutions — AI Automation for Small Business">
-<meta name="twitter:description" content="Stop doing what a robot could do. We automate your admin, proposals, scheduling, and more. Miami, FL.">
-<link rel="canonical" href="https://meetcanopy-ai.github.io/canopy-ai-solutions/">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Canopy AI Solutions",
-  "description": "AI-powered workflow automation and consulting for small businesses",
-  "url": "https://meetcanopy-ai.github.io/canopy-ai-solutions/",
-  "email": "meetcanopy@gmail.com",
-  "areaServed": ["Miami", "Fort Lauderdale", "Palm Beach", "South Florida"],
-  "priceRange": "$1,500 - $7,500",
-  "serviceType": ["AI Consulting", "Workflow Automation", "Business Process Automation"],
-  "founder": {
-    "@type": "Person",
-    "name": "Stephanie Gonzalez",
-    "jobTitle": "AI Strategist"
-  }
-}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
---bg:#0a0a14;--card:#12122a;--border:#1a1a3a;
---green:#22c55e;--green-dim:#166534;--green-glow:rgba(34,197,94,0.15);
---cyan:#00d4ff;--text:#d4d4e8;--text-dim:#6a6a8a;--text-bright:#f0f0ff;
---gold:#FFD700;--sakura:#FF6B9D;
+  --bg:#fafaf9;
+  --text:#1a1a1a;
+  --text-dim:#6b6b6b;
+  --green:#1B5E3B;
+  --green-light:#e8f5e9;
+  --green-mid:#2e7d4f;
+  --accent:#D4A853;
+  --white:#ffffff;
+  --card:#ffffff;
+  --border:#e5e5e5;
 }
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(34,197,94,0.06),transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(0,212,255,0.04),transparent 50%);pointer-events:none;z-index:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(10,10,20,0.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;z-index:100}
-.nav-logo{display:flex;align-items:center;gap:10px}
-.nav-logo-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--green),#15803d);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 0 20px rgba(34,197,94,0.3)}
-.nav-logo-text{font-family:'Orbitron',monospace;font-size:16px;font-weight:700;color:var(--green);letter-spacing:2px}
+nav{position:fixed;top:0;width:100%;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:100;padding:0 24px}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--green);font-weight:700;font-size:20px;letter-spacing:1px}
+.nav-logo img{height:36px;width:36px}
 .nav-links{display:flex;gap:32px;align-items:center}
-.nav-links a{color:var(--text-dim);text-decoration:none;font-size:14px;font-weight:500;transition:color 0.2s}
+.nav-links a{text-decoration:none;color:var(--text-dim);font-size:14px;font-weight:500;transition:color 0.2s}
 .nav-links a:hover{color:var(--green)}
-.nav-cta{background:linear-gradient(135deg,var(--green),#15803d);color:#fff;border:none;padding:10px 24px;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.3s;box-shadow:0 0 20px rgba(34,197,94,0.2)}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 0 30px rgba(34,197,94,0.4)}
+.nav-cta{background:var(--green);color:white;padding:10px 24px;border-radius:8px;text-decoration:none;font-size:14px;font-weight:600;transition:background 0.2s}
+.nav-cta:hover{background:var(--green-mid)}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;position:relative}
-.hero-content{max-width:800px;position:relative;z-index:1}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.2);border-radius:100px;padding:6px 16px;font-size:12px;color:var(--green);font-weight:600;letter-spacing:1px;text-transform:uppercase;margin-bottom:24px}
-.hero-badge .dot{width:6px;height:6px;background:var(--green);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
-.hero h1{font-size:clamp(40px,6vw,72px);font-weight:900;line-height:1.1;margin-bottom:24px;color:var(--text-bright)}
-.hero h1 span{background:linear-gradient(135deg,var(--green),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{font-size:clamp(16px,2vw,20px);color:var(--text-dim);line-height:1.7;max-width:600px;margin:0 auto 40px}
+.hero{padding:140px 24px 80px;text-align:center;max-width:800px;margin:0 auto}
+.hero-badge{display:inline-block;background:var(--green-light);color:var(--green);font-size:13px;font-weight:600;padding:6px 16px;border-radius:50px;margin-bottom:24px}
+.hero h1{font-size:clamp(36px,5vw,56px);font-weight:800;line-height:1.1;margin-bottom:20px;letter-spacing:-1px}
+.hero h1 span{color:var(--green)}
+.hero p{font-size:18px;color:var(--text-dim);max-width:600px;margin:0 auto 32px;line-height:1.7}
 .hero-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-.btn-primary{background:linear-gradient(135deg,var(--green),#15803d);color:#fff;border:none;padding:16px 40px;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;text-decoration:none;transition:all 0.3s;box-shadow:0 4px 30px rgba(34,197,94,0.3)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(34,197,94,0.4)}
-.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border);padding:16px 40px;border-radius:12px;font-size:16px;font-weight:600;cursor:pointer;text-decoration:none;transition:all 0.3s}
+.btn-primary{background:var(--green);color:white;padding:14px 32px;border-radius:10px;text-decoration:none;font-size:16px;font-weight:600;transition:all 0.2s;display:inline-flex;align-items:center;gap:8px}
+.btn-primary:hover{background:var(--green-mid);transform:translateY(-1px);box-shadow:0 4px 12px rgba(27,94,59,0.3)}
+.btn-secondary{background:transparent;color:var(--text);padding:14px 32px;border-radius:10px;text-decoration:none;font-size:16px;font-weight:500;border:1px solid var(--border);transition:all 0.2s}
 .btn-secondary:hover{border-color:var(--green);color:var(--green)}
 
-/* STATS BAR */
-.stats{display:flex;justify-content:center;gap:60px;padding:60px 24px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(18,18,42,0.5)}
-.stat{text-align:center}
-.stat-num{font-family:'Orbitron',monospace;font-size:36px;font-weight:800;color:var(--green);margin-bottom:4px}
-.stat-label{font-size:13px;color:var(--text-dim);letter-spacing:1px;text-transform:uppercase}
+/* SOCIAL PROOF */
+.proof{padding:40px 24px;text-align:center;border-bottom:1px solid var(--border)}
+.proof-inner{max-width:800px;margin:0 auto;display:flex;justify-content:center;gap:48px;flex-wrap:wrap}
+.proof-item{display:flex;flex-direction:column;align-items:center}
+.proof-number{font-size:32px;font-weight:800;color:var(--green)}
+.proof-label{font-size:13px;color:var(--text-dim);margin-top:4px}
 
 /* SECTION */
-section{padding:100px 48px;max-width:1200px;margin:0 auto}
-.section-label{font-family:'Orbitron',monospace;font-size:11px;color:var(--green);letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
-.section-title{font-size:clamp(28px,4vw,44px);font-weight:800;color:var(--text-bright);margin-bottom:16px;line-height:1.2}
-.section-sub{font-size:18px;color:var(--text-dim);max-width:600px;line-height:1.6;margin-bottom:48px}
+section{padding:80px 24px}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:13px;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
+.section-title{font-size:clamp(28px,3.5vw,40px);font-weight:800;margin-bottom:16px;letter-spacing:-0.5px}
+.section-subtitle{font-size:16px;color:var(--text-dim);max-width:600px;margin-bottom:48px;line-height:1.7}
 
-/* PAIN POINTS */
-.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.pain-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;transition:all 0.3s;position:relative;overflow:hidden}
-.pain-card:hover{border-color:rgba(34,197,94,0.3);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,0.3)}
-.pain-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--cyan));opacity:0;transition:opacity 0.3s}
-.pain-card:hover::before{opacity:1}
-.pain-icon{font-size:32px;margin-bottom:16px}
-.pain-card h3{font-size:18px;font-weight:700;color:var(--text-bright);margin-bottom:8px}
-.pain-card p{font-size:14px;color:var(--text-dim);line-height:1.6}
+/* SERVICES GRID */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;transition:all 0.2s}
+.service-card:hover{border-color:var(--green);box-shadow:0 4px 20px rgba(27,94,59,0.08)}
+.service-icon{font-size:32px;margin-bottom:16px}
+.service-card h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.service-card p{font-size:14px;color:var(--text-dim);line-height:1.6}
 
 /* HOW IT WORKS */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;counter-reset:step}
-.step{position:relative;padding:40px 32px;background:var(--card);border:1px solid var(--border);border-radius:16px;text-align:center}
-.step-num{font-family:'Orbitron',monospace;font-size:48px;font-weight:800;color:rgba(34,197,94,0.15);margin-bottom:12px}
-.step h3{font-size:20px;font-weight:700;color:var(--text-bright);margin-bottom:8px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;counter-reset:step}
+.step{position:relative;padding:24px 0}
+.step::before{counter-increment:step;content:counter(step);font-size:48px;font-weight:800;color:var(--green-light);line-height:1;margin-bottom:12px;display:block}
+.step h3{font-size:16px;font-weight:700;margin-bottom:8px}
 .step p{font-size:14px;color:var(--text-dim);line-height:1.6}
 
+/* INDUSTRIES */
+.industries{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.industry-tag{background:var(--green-light);color:var(--green);padding:8px 20px;border-radius:50px;font-size:14px;font-weight:500}
+
+/* CASE STUDY */
+.case-study{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.case-study-content h3{font-size:24px;font-weight:700;margin-bottom:16px}
+.case-study-content p{font-size:15px;color:var(--text-dim);line-height:1.7;margin-bottom:24px}
+.case-metrics{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.metric{background:var(--green-light);border-radius:12px;padding:20px;text-align:center}
+.metric-value{font-size:28px;font-weight:800;color:var(--green)}
+.metric-label{font-size:12px;color:var(--text-dim);margin-top:4px}
+
 /* PRICING */
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.price-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:40px 32px;position:relative;transition:all 0.3s}
-.price-card.featured{border-color:var(--green);box-shadow:0 0 40px rgba(34,197,94,0.15)}
-.price-card.featured::before{content:'MOST POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--green),#15803d);color:#fff;font-size:10px;font-weight:800;padding:4px 16px;border-radius:100px;letter-spacing:1px}
-.price-tier{font-size:12px;font-weight:700;color:var(--green);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
-.price-amount{font-family:'Orbitron',monospace;font-size:42px;font-weight:800;color:var(--text-bright);margin-bottom:4px}
-.price-type{font-size:13px;color:var(--text-dim);margin-bottom:24px}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.price-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:36px;position:relative}
+.price-card.featured{border-color:var(--green);box-shadow:0 4px 24px rgba(27,94,59,0.1)}
+.price-card.featured::before{content:'MOST POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--green);color:white;font-size:11px;font-weight:700;padding:4px 16px;border-radius:50px;letter-spacing:1px}
+.price-name{font-size:14px;font-weight:600;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px}
+.price-amount{font-size:40px;font-weight:800;margin-bottom:4px}
+.price-desc{font-size:14px;color:var(--text-dim);margin-bottom:24px}
 .price-features{list-style:none;margin-bottom:32px}
-.price-features li{font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid rgba(30,30,62,0.5);display:flex;align-items:center;gap:8px}
-.price-features li::before{content:'✓';color:var(--green);font-weight:700;font-size:14px}
-.price-btn{width:100%;padding:14px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;transition:all 0.3s;text-decoration:none;display:block;text-align:center}
-.price-btn-primary{background:linear-gradient(135deg,var(--green),#15803d);color:#fff;border:none;box-shadow:0 4px 20px rgba(34,197,94,0.3)}
-.price-btn-secondary{background:transparent;color:var(--green);border:1px solid var(--green)}
+.price-features li{font-size:14px;padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.price-features li::before{content:'✓';color:var(--green);font-weight:700}
+.price-cta{display:block;text-align:center;padding:14px;border-radius:10px;text-decoration:none;font-weight:600;font-size:15px;transition:all 0.2s}
+.price-cta-primary{background:var(--green);color:white}
+.price-cta-primary:hover{background:var(--green-mid)}
+.price-cta-secondary{border:1px solid var(--border);color:var(--text)}
+.price-cta-secondary:hover{border-color:var(--green);color:var(--green)}
 
-/* TESTIMONIALS */
-.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.testimonial-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;transition:all 0.3s}
-.testimonial-card:hover{border-color:rgba(34,197,94,0.3);transform:translateY(-4px)}
-.testimonial-stars{color:var(--gold);font-size:16px;margin-bottom:16px;letter-spacing:2px}
-.testimonial-quote{font-size:15px;color:var(--text-bright);line-height:1.7;margin-bottom:20px;font-style:italic}
-.testimonial-bottom{display:flex;align-items:center;gap:12px}
-.testimonial-avatar{width:44px;height:44px;border-radius:50%;border:2px solid var(--green);background:var(--card)}
-.testimonial-name{font-size:14px;font-weight:700;color:var(--text-bright)}
-.testimonial-role{font-size:12px;color:var(--text-dim)}
-@media(max-width:768px){.testimonials-grid{grid-template-columns:1fr}}
-
-/* ABOUT */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.about-text h3{font-size:24px;font-weight:700;color:var(--text-bright);margin-bottom:12px}
-.about-text p{font-size:15px;color:var(--text-dim);line-height:1.7;margin-bottom:16px}
-.about-highlights{display:flex;flex-direction:column;gap:12px}
-.about-highlight{display:flex;align-items:center;gap:12px;padding:16px;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.1);border-radius:10px}
-.about-highlight .icon{font-size:24px}
-.about-highlight .label{font-size:14px;color:var(--text);font-weight:500}
-
-/* CTA */
-.cta-section{text-align:center;padding:100px 24px;background:linear-gradient(180deg,transparent,rgba(34,197,94,0.05),transparent)}
-.cta-section h2{font-size:clamp(32px,4vw,48px);font-weight:900;color:var(--text-bright);margin-bottom:16px}
-.cta-section p{font-size:18px;color:var(--text-dim);margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto}
+/* CTA SECTION */
+.cta-section{background:var(--green);color:white;border-radius:24px;padding:64px 48px;text-align:center;max-width:900px;margin:0 auto 80px}
+.cta-section h2{font-size:clamp(28px,3.5vw,40px);font-weight:800;margin-bottom:16px}
+.cta-section p{font-size:16px;opacity:0.85;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto}
+.btn-white{background:white;color:var(--green);padding:14px 32px;border-radius:10px;text-decoration:none;font-size:16px;font-weight:700;transition:all 0.2s;display:inline-block}
+.btn-white:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,0,0,0.15)}
 
 /* FOOTER */
-footer{border-top:1px solid var(--border);padding:48px;text-align:center}
-.footer-logo{font-family:'Orbitron',monospace;font-size:14px;color:var(--green);letter-spacing:2px;margin-bottom:12px}
-.footer-text{font-size:12px;color:var(--text-dim)}
-.footer-links{display:flex;gap:24px;justify-content:center;margin-top:12px}
-.footer-links a{font-size:12px;color:var(--text-dim);text-decoration:none}
-.footer-links a:hover{color:var(--green)}
+footer{padding:48px 24px;border-top:1px solid var(--border);text-align:center}
+footer p{font-size:13px;color:var(--text-dim)}
+footer a{color:var(--green);text-decoration:none}
 
 /* RESPONSIVE */
 @media(max-width:768px){
-nav{padding:0 20px}
-.nav-links{display:none}
-section{padding:60px 20px}
-.steps{grid-template-columns:1fr}
-.pricing-grid{grid-template-columns:1fr}
-.about-grid{grid-template-columns:1fr}
-.stats{flex-wrap:wrap;gap:30px}
+  .nav-links{display:none}
+  .case-study{grid-template-columns:1fr;padding:32px}
+  .hero{padding:100px 20px 60px}
+  .cta-section{margin:0 16px 60px;padding:40px 24px}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
-  <div class="nav-logo">
-    <div class="nav-logo-icon">🌿</div>
-    <span class="nav-logo-text">CANOPY AI</span>
-  </div>
-  <div class="nav-links">
-    <a href="#services">Services</a>
-    <a href="#how">How It Works</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#about">About</a>
-    <a href="https://calendly.com/meetcanopy" class="nav-cta" target="_blank">Book Free Audit →</a>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span>CANOPY AI</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="https://calendly.com/meetcanopy/discovery" class="nav-cta">Book a Call →</a>
+    </div>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-content">
-    <div class="hero-badge"><span class="dot"></span> Now Accepting Clients</div>
-    <h1>Your Business,<br>But <span>Smarter</span></h1>
-    <p>We build AI systems that handle your admin, write in your voice, and integrate with your existing tools. One-time setup. No subscriptions. Your data stays yours.</p>
-    <div class="hero-buttons">
-      <a href="https://calendly.com/meetcanopy" class="btn-primary" target="_blank">Book a Free Workflow Audit</a>
-      <a href="#how" class="btn-secondary">See How It Works</a>
+  <div class="hero-badge">🤖 AI Automation for Small Business</div>
+  <h1>Stop doing work <span>a machine could do.</span></h1>
+  <p>We build custom AI systems that save your team 15-30 hours per week. No templates. No generic chatbots. Systems built around how your business actually runs.</p>
+  <div class="hero-buttons">
+    <a href="https://calendly.com/meetcanopy/discovery" class="btn-primary">Book Free Discovery Call →</a>
+    <a href="#services" class="btn-secondary">See What We Build</a>
+  </div>
+</div>
+
+<!-- SOCIAL PROOF -->
+<div class="proof">
+  <div class="proof-inner">
+    <div class="proof-item">
+      <div class="proof-number">15-30</div>
+      <div class="proof-label">Hours saved per week</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-number">60</div>
+      <div class="proof-label">Day ROI timeline</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-number">50+</div>
+      <div class="proof-label">Integrations supported</div>
+    </div>
+    <div class="proof-item">
+      <div class="proof-number">24/7</div>
+      <div class="proof-label">Your AI works while you sleep</div>
     </div>
   </div>
 </div>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stat"><div class="stat-num">50+</div><div class="stat-label">Workflows Automated</div></div>
-  <div class="stat"><div class="stat-num">15+</div><div class="stat-label">Avg Hours Saved / Week</div></div>
-  <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Data Privacy</div></div>
-  <div class="stat"><div class="stat-num">$0</div><div class="stat-label">Monthly Software Fees</div></div>
-</div>
-
 <!-- SERVICES -->
 <section id="services">
-  <div class="section-label">What We Automate</div>
-  <h2 class="section-title">Stop Doing What a Robot Could Do</h2>
-  <p class="section-sub">We look at where you're spending 10-20 hours a week on stuff that doesn't need a human brain — and we fix it.</p>
-  <div class="pain-grid">
-    <div class="pain-card">
-      <div class="pain-icon">📧</div>
-      <h3>Email & Communications</h3>
-      <p>AI that drafts emails, follow-ups, and client responses in YOUR voice. Not corporate. Not robotic. Actually you.</p>
-    </div>
-    <div class="pain-card">
-      <div class="pain-icon">📋</div>
-      <h3>Proposals & Documents</h3>
-      <p>Auto-generate proposals, invoices, and reports from templates. What used to take hours now takes seconds.</p>
-    </div>
-    <div class="pain-card">
-      <div class="pain-icon">📅</div>
-      <h3>Scheduling & Reminders</h3>
-      <p>Smart calendar management, appointment booking, follow-up reminders — all running on autopilot.</p>
-    </div>
-    <div class="pain-card">
-      <div class="pain-icon">🔗</div>
-      <h3>Tool Integration</h3>
-      <p>Connect your existing tools — CRMs, project managers, accounting software. Everything talks to everything.</p>
-    </div>
-    <div class="pain-card">
-      <div class="pain-icon">🎙️</div>
-      <h3>Voice Cloning</h3>
-      <p>Your AI assistant sounds like you. Literally. We clone your voice for audio responses, voicemails, and more.</p>
-    </div>
-    <div class="pain-card">
-      <div class="pain-icon">✈️</div>
-      <h3>Concierge Services</h3>
-      <p>Travel booking, restaurant reservations, personal tasks — your AI handles the life admin too.</p>
+  <div class="section-inner">
+    <div class="section-label">What We Build</div>
+    <div class="section-title">AI that actually does the work.</div>
+    <div class="section-subtitle">Not another tool to learn. We build systems that plug into what you already use and automate the stuff your team shouldn't be doing manually.</div>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">⚡</div>
+        <h3>Workflow Automation</h3>
+        <p>Connect your existing tools — QuickBooks, HubSpot, Google Workspace, Slack — and automate the repetitive processes between them. No more copy-pasting between systems.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">💬</div>
+        <h3>AI Customer Service</h3>
+        <p>Chatbots that actually know your business. Handle FAQs, book appointments, capture leads, and escalate complex issues — 24/7, in English and Spanish.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Operational Intelligence</h3>
+        <p>Turn your data into decisions. Automated reporting, trend analysis, anomaly detection, and dashboards that update themselves. Know what's happening without digging.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📋</div>
+        <h3>Document & Email Automation</h3>
+        <p>Proposals, contracts, follow-ups, and reports generated automatically from your data. Stop spending hours on documents that follow the same pattern every time.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">👥</div>
+        <h3>HR & Benefits Automation</h3>
+        <p>Employee onboarding, benefits enrollment, compliance tracking, and PTO management. We built this because we live it — our team runs open enrollment too.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🔗</div>
+        <h3>Custom AI Agents</h3>
+        <p>AI assistants trained on your business data that can answer questions, make recommendations, and take actions across your entire tech stack. Your smartest employee that never sleeps.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- HOW IT WORKS -->
-<section id="how">
-  <div class="section-label">The Process</div>
-  <h2 class="section-title">Three Steps to Autopilot</h2>
-  <p class="section-sub">No jargon, no 47-slide decks about "digital transformation." Just results.</p>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <h3>Free Workflow Audit</h3>
-      <p>We hop on a 15-minute call, look at your actual day-to-day, and identify where you're losing hours. No pitch — just value.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <h3>Custom Build</h3>
-      <p>We build your AI system from scratch — tailored to your business, your tools, your voice. Everything runs locally on your machine.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <h3>Launch & Train</h3>
-      <p>We deploy, train your team, and make sure everything works perfectly. One-time setup. You own it forever.</p>
+<section id="how" style="background:var(--white)">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <div class="section-title">From call to live in 2-4 weeks.</div>
+    <div class="section-subtitle">No 6-month enterprise rollout. No committee meetings. We move fast because you need results, not timelines.</div>
+    
+    <div class="steps">
+      <div class="step">
+        <h3>Discovery Call</h3>
+        <p>15-minute call. You tell us what's eating your team's time. We tell you exactly what we'd automate first and why.</p>
+      </div>
+      <div class="step">
+        <h3>Custom Roadmap</h3>
+        <p>We map your workflows, identify the highest-ROI automations, and give you a specific plan with real numbers. No generic decks.</p>
+      </div>
+      <div class="step">
+        <h3>Build & Deploy</h3>
+        <p>We build your AI systems, test them with your actual data, and deploy them into your existing tools. Your team gets trained on day one.</p>
+      </div>
+      <div class="step">
+        <h3>Optimize & Scale</h3>
+        <p>Monthly check-ins to monitor performance, add new automations, and make sure everything keeps running. We grow with you.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="section-label">What Our Clients Say</div>
-  <h2 class="section-title">Real Results, Real Businesses</h2>
-  <p class="section-sub">We've helped dozens of business owners reclaim their time and scale smarter.</p>
-  <div class="testimonials-grid">
-    <div class="testimonial-card">
-      <div class="testimonial-stars">★★★★★</div>
-      <div class="testimonial-quote">"It's like having a $70,000/year assistant for a fraction of the cost. My proposals write themselves, my calendar books itself, and my emails actually sound like me."</div>
-      <div class="testimonial-bottom">
-        <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Marcus&backgroundColor=b6e3f4" class="testimonial-avatar" alt="">
-        <div><div class="testimonial-name">Marcus R.</div><div class="testimonial-role">VP of Sales — National Services Company</div></div>
-      </div>
+<!-- INDUSTRIES -->
+<section>
+  <div class="section-inner">
+    <div class="section-label">Who We Work With</div>
+    <div class="section-title">Built for businesses that run on hustle, not headcount.</div>
+    <div class="section-subtitle">If your team is 5-50 people and you're tired of throwing bodies at problems that software should solve, we're your people.</div>
+    
+    <div class="industries">
+      <span class="industry-tag">Construction & Trades</span>
+      <span class="industry-tag">Insurance & Benefits</span>
+      <span class="industry-tag">Professional Services</span>
+      <span class="industry-tag">Healthcare</span>
+      <span class="industry-tag">Real Estate</span>
+      <span class="industry-tag">E-Commerce</span>
+      <span class="industry-tag">Hospitality</span>
+      <span class="industry-tag">Home Services</span>
+      <span class="industry-tag">Legal</span>
+      <span class="industry-tag">Accounting</span>
     </div>
-    <div class="testimonial-card">
-      <div class="testimonial-stars">★★★★★</div>
-      <div class="testimonial-quote">"I was spending 3 hours a day just on email. Canopy cut that to 20 minutes. My clients can't tell the difference — the AI sounds exactly like me. It's insane."</div>
-      <div class="testimonial-bottom">
-        <img src="https://api.dicebear.com/7.x/notionists/svg?seed=Sandra&backgroundColor=ffd5dc" class="testimonial-avatar" alt="">
-        <div><div class="testimonial-name">Sandra L.</div><div class="testimonial-role">Owner — Residential Property Management</div></div>
+  </div>
+</section>
+
+<!-- CASE STUDY -->
+<section style="background:var(--white)">
+  <div class="section-inner">
+    <div class="section-label">Results</div>
+    <div class="section-title">What this looks like in practice.</div>
+    <div style="height:24px"></div>
+    
+    <div class="case-study">
+      <div class="case-study-content">
+        <h3>Commercial Contractor — 25+ Years in Business</h3>
+        <p>A South Florida commercial contractor was spending 10-15 hours per week on sales admin — estimates, scheduling, employee scorecards, and project tracking. All manual. All spreadsheets.</p>
+        <p>We built a custom AI system that automated estimating workflows, digitized their scorecard process, and connected their QuickBooks data to real-time dashboards. The VP of Sales got his week back.</p>
       </div>
-    </div>
-    <div class="testimonial-card">
-      <div class="testimonial-stars">★★★★★</div>
-      <div class="testimonial-quote">"I almost hired another admin. Instead I spent a third of that on Canopy and got way more done. ROI in the first month, easily. Best decision I made this year."</div>
-      <div class="testimonial-bottom">
-        <img src="https://api.dicebear.com/7.x/notionists/svg?seed=David&backgroundColor=c0aede" class="testimonial-avatar" alt="">
-        <div><div class="testimonial-name">David P.</div><div class="testimonial-role">CEO — Regional Logistics Firm</div></div>
+      <div class="case-metrics">
+        <div class="metric">
+          <div class="metric-value">60%</div>
+          <div class="metric-label">Admin time reduced</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">15 hrs</div>
+          <div class="metric-label">Saved per week</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">2 wks</div>
+          <div class="metric-label">Time to deploy</div>
+        </div>
+        <div class="metric">
+          <div class="metric-value">3x</div>
+          <div class="metric-label">Proposal speed</div>
+        </div>
       </div>
     </div>
   </div>
@@ -299,117 +310,72 @@ section{padding:60px 20px}
 
 <!-- PRICING -->
 <section id="pricing">
-  <div class="section-label">Investment</div>
-  <h2 class="section-title">One-Time Setup. No Subscriptions.</h2>
-  <p class="section-sub">Unlike every other AI company, we don't charge you monthly for something that should be a one-time build.</p>
-  <div class="pricing-grid">
-    <div class="price-card">
-      <div class="price-tier">🌿 Pilot</div>
-      <div class="price-amount">$1,500</div>
-      <div class="price-type">One-time</div>
-      <ul class="price-features">
-        <li>2-week pilot program</li>
-        <li>1 workflow automated</li>
-        <li>1 tool integration</li>
-        <li>Training session</li>
-        <li>Full automation roadmap</li>
-        <li>Credits toward upgrade</li>
-      </ul>
-      <a href="https://calendly.com/meetcanopy" class="price-btn price-btn-secondary" target="_blank">Start Pilot</a>
-    </div>
-    <div class="price-card featured">
-      <div class="price-tier">🌱 Growth</div>
-      <div class="price-amount">$3,500</div>
-      <div class="price-type">One-time</div>
-      <ul class="price-features">
-        <li>Email AI (your voice)</li>
-        <li>Core workflow automation</li>
-        <li>2-3 tool integrations</li>
-        <li>Voice model setup</li>
-        <li>Team training session</li>
-        <li>30-day support</li>
-      </ul>
-      <a href="https://calendly.com/meetcanopy" class="price-btn price-btn-primary" target="_blank">Get Started</a>
-    </div>
-    <div class="price-card">
-      <div class="price-tier">🌳 Canopy</div>
-      <div class="price-amount">$7,500</div>
-      <div class="price-type">One-time</div>
-      <ul class="price-features">
-        <li>Full AI transformation</li>
-        <li>Unlimited workflows</li>
-        <li>All tool integrations</li>
-        <li>Voice cloning</li>
-        <li>Concierge services</li>
-        <li>Priority support + retainer option</li>
-      </ul>
-      <a href="https://calendly.com/meetcanopy" class="price-btn price-btn-secondary" target="_blank">Book a Call</a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-label">About Us</div>
-  <h2 class="section-title">AI That Actually Works for Small Business</h2>
-  <div class="about-grid">
-    <div class="about-text">
-      <h3>We Built This for You</h3>
-      <p>Canopy AI Solutions was founded on a simple observation: <strong>small business owners are drowning in admin work that doesn't grow their business.</strong> Scheduling, emails, proposals, follow-ups — 15-20 hours a week on autopilot tasks.</p>
-      <p>Our team combines deep operations experience with cutting-edge AI implementation. We don't sell software — we build custom systems that integrate with your existing tools, sound like you, and run on your hardware.</p>
-      <p>We've worked with companies across construction, property management, logistics, hospitality, and professional services — helping teams save thousands of hours and scale without adding headcount.</p>
-      <p><strong>Privacy-first. One-time setup. No recurring fees for the build. That's the Canopy way.</strong></p>
-    </div>
-    <div class="about-highlights">
-      <div class="about-highlight"><span class="icon">🏢</span><span class="label">Serving businesses across 10+ industries</span></div>
-      <div class="about-highlight"><span class="icon">🔒</span><span class="label">Privacy-first: your data never leaves your machine</span></div>
-      <div class="about-highlight"><span class="icon">⚡</span><span class="label">Average client saves 15+ hours per week</span></div>
-      <div class="about-highlight"><span class="icon">🤝</span><span class="label">Trusted by construction, service & hospitality companies</span></div>
-      <div class="about-highlight"><span class="icon">🌴</span><span class="label">Based in Miami, serving clients nationwide</span></div>
+  <div class="section-inner">
+    <div class="section-label">Pricing</div>
+    <div class="section-title">Transparent pricing. No surprises.</div>
+    <div class="section-subtitle">Every engagement starts with a free discovery call. We'll tell you exactly what it costs before any work begins.</div>
+    
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="price-name">Pilot</div>
+        <div class="price-amount">$1,500</div>
+        <div class="price-desc">One-time setup</div>
+        <ul class="price-features">
+          <li>1 core workflow automated</li>
+          <li>Integration with 2-3 existing tools</li>
+          <li>Team training session</li>
+          <li>30 days of support</li>
+          <li>Documentation included</li>
+        </ul>
+        <a href="https://calendly.com/meetcanopy/discovery" class="price-cta price-cta-secondary">Get Started →</a>
+      </div>
+      
+      <div class="price-card featured">
+        <div class="price-name">Growth</div>
+        <div class="price-amount">$3,500</div>
+        <div class="price-desc">One-time + $350/mo retainer</div>
+        <ul class="price-features">
+          <li>3-5 workflows automated</li>
+          <li>AI chatbot or voice assistant</li>
+          <li>Full tech stack integration</li>
+          <li>Custom dashboard</li>
+          <li>Monthly optimization calls</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://calendly.com/meetcanopy/discovery" class="price-cta price-cta-primary">Book a Call →</a>
+      </div>
+      
+      <div class="price-card">
+        <div class="price-name">Canopy</div>
+        <div class="price-amount">$7,500</div>
+        <div class="price-desc">One-time + $750/mo retainer</div>
+        <ul class="price-features">
+          <li>Full operational AI buildout</li>
+          <li>Unlimited workflow automations</li>
+          <li>Custom AI agent trained on your data</li>
+          <li>Multi-language support</li>
+          <li>Dedicated strategist</li>
+          <li>Weekly optimization + reporting</li>
+          <li>Concierge service available</li>
+        </ul>
+        <a href="https://calendly.com/meetcanopy/discovery" class="price-cta price-cta-secondary">Get Started →</a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<div class="cta-section">
-  <h2>Ready to Get Your Time Back?</h2>
-  <p>Book a free 15-minute workflow audit. No pitch, no pressure — just a clear picture of where you're losing hours.</p>
-  <a href="https://calendly.com/meetcanopy" class="btn-primary" target="_blank" style="display:inline-block">Book Your Free Audit →</a>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">🌿 CANOPY AI SOLUTIONS</div>
-  <div class="footer-text">Your Business, But Smarter</div>
-  <div class="footer-links">
-    <a href="https://calendly.com/meetcanopy" target="_blank">Book a Call</a>
-    <a href="https://twitter.com/stephcanopy" target="_blank">Twitter</a>
-    <a href="https://linkedin.com/in/sgonz267" target="_blank">LinkedIn</a>
-    <a href="mailto:meetcanopy@gmail.com">Contact</a>
+<section>
+  <div class="cta-section">
+    <h2>Ready to get your time back?</h2>
+    <p>15 minutes. That's all it takes to find out what AI can do for your business. No pitch, no pressure — just a real conversation.</p>
+    <a href="https://calendly.com/meetcanopy/discovery" class="btn-white">Book Your Free Discovery Call →</a>
   </div>
-  <div class="footer-text" style="margin-top:16px">© 2026 Canopy AI Solutions. Miami, FL.</div>
+</section>
+
+<footer>
+  <p>© 2026 Canopy AI Solutions · Miami, FL · <a href="mailto:meetcanopy@gmail.com">meetcanopy@gmail.com</a> · <a href="https://twitter.com/stephcanopy" target="_blank">@stephcanopy</a></p>
 </footer>
-
-<script>
-// Smooth scroll for nav links
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})
-  })
-});
-
-// Intersection observer for fade-in
-const observer = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)'}
-  })
-},{threshold:0.1});
-document.querySelectorAll('.pain-card,.step,.price-card,.testimonial').forEach(el=>{
-  el.style.opacity='0';el.style.transform='translateY(20px)';el.style.transition='all 0.6s ease';
-  observer.observe(el);
-});
-</script>
 
 </body>
 </html>
